@@ -1,0 +1,56 @@
+{% extends "meetups/base.html" %}
+{% load static %}
+{% block title %}   {{ title }} {% endblock %}
+      
+    
+ 
+
+{% block header %}  <h1 class="alert alert-primary" role="alert">  we got meetups coming up | meetups detail </h1> {% endblock %}
+
+{% block body %}
+ 
+<div class="jumbotron">
+    <h1 class="display-4">
+        <h2 class="fs-6">Meetup Location</h2>
+    </h1>
+
+
+    <img width="200" height="200" src="{{ image }}" alt="" srcset="">
+    <p class="lead"> This meetup takes plaes in <span>Location </span> ({{ location }}) </p>
+    <hr class="my-4">
+    <p> what is the meet up is about
+
+    <p>{{ description }} </p>
+    </p>
+    <p class="lead"> This meetup takes plaes in <span>Location </span> ({{ address }}) </p>
+    <p class="lead"> need more help please contact <a href="">{{ organizer }}</a> </p>
+
+
+    <a class="btn btn-primary btn-lg" href="#" role="button">Join us</a>
+</div>
+
+<form  action="{% url 'meetup_slug' slug %}" method="post">
+{% csrf_token %}
+    <ul>
+         {{ form.as_ul }}
+    </ul>
+
+    <button class="btn btn-success">
+        refister
+    </button>
+</form>
+
+
+{% endblock %}
+
+
+
+
+
+
+ 
+
+
+
+
+ 

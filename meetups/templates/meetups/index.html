@@ -1,0 +1,24 @@
+{% extends "meetups/base.html" %}
+
+{% load static %}
+
+
+<title>{% block title %} meetups main {% endblock %}</title>
+
+
+
+{% block body %}
+<main>
+    <section>
+        <h2 class="fw-2">
+            upcoming meetups
+        </h2>
+        <ul class="m-2">
+            {% for meet in meetups %}
+            {% include "meetups/includes/list.html" with title=meet.title image=meet.image.url location="New yoek" %}
+            {% endfor %}
+        </ul>
+    </section>
+</main>
+
+{% endblock %}

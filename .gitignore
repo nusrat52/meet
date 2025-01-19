@@ -1,0 +1,71 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django migrations
+*/migrations/__pycache__/
+*/migrations/*.pyc
+*/migrations/*.pyo
+*/migrations/*.log
+
+# Environment variables
+.env
+
+# Virtual environment
+venv/
+env/
+
+# Django static files
+staticfiles/
+static/
+
+# Media uploads
+media/
+
+# Local database files
+db.sqlite3
+
+# Logs
+*.log
+logs/
+
+# Cache files
+*.cache
+*.mo
+*.pot
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Coverage reports
+.coverage
+htmlcov/
+coverage.xml
+
+# Testing and CI
+*.pytest_cache/
+.tox/
+.nox/
+.jupyter/
+*.ipynb_checkpoints
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Node.js (if using frontend tools like React)
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log

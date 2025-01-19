@@ -1,0 +1,11 @@
+<li class="meetup-item m-2">
+    <div class="card" style="width: 18rem;">
+        <img src="{{ image }}" class="card-img-top" alt="{{ title }}">
+        <div class="card-body">
+            <h5 class="card-title">{{ title }}</h5>
+            <p class="card-text"> {{ location }}</p>
+            <a href="{% url 'meetup_slug' meet.slug %}" class="btn btn-primary">more detail</a>
+        </div>
+    </div>
+
+</li>

@@ -1,0 +1,37 @@
+{% extends "meetups/base.html" %}
+{% load static %}
+{% block title %}   success page {% endblock %}
+      
+    
+ 
+
+{% block header %}  <h1 class="alert alert-primary" role="alert">  we got meetups coming up | Success page </h1> {% endblock %}
+
+{% block body %}
+
+
+
+<button class="btn btn-primary d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive">Toggle offcanvas</button>
+
+<div class="alert alert-info d-none d-lg-block"> <h1 class="text-success">congratulations you </h1></div>
+
+<div class="offcanvas-lg offcanvas-end" tabindex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">sucessfully entered</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive" aria-label="Close"></button>
+  </div>
+
+  <a href="mailto:{{ email }}">organizer</a>
+  <div class="offcanvas-body">
+   </div>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+ 
+
