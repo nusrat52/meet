@@ -1,0 +1,26 @@
+version: "3"
+services:
+  web:
+    build: 
+      context: .
+    ports:
+      - "8000:8000"
+    command: ["sh", "./start.sh"]
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    depends_on:
+      - django_db
+
+  django_db:
+    image: postgres  # Corrected here
+    volumes:
+      - postgress_data:/var/lib/postgresql/data
+    environment: 
+      - POSTGRES_DB=${SQL_NAME}
+      - POSTGRES_USER=${SQL_USER}
+      - POSTGRES_PASSWORD=${SQL_PASSWORD}
+
+volumes:
+  postgress_data:
