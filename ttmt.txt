@@ -9,7 +9,7 @@ User=root
 Group=www-data
 WorkingDirectory=/home/meet
 Environment="PATH=/home/meet/firs_django_venv/bin"
-ExecStart=/usr/local/bin/gunicorn \
+ExecStart=/home/meet/firs_django_venv/bin/gunicorn \
           --access-logfile - \
           --workers 3 \
           --bind unix:/run/gunicorn.sock \
