@@ -80,14 +80,23 @@ DATABASES = {
         'NAME': 'db',
         'USER': 'nusret',
         'PASSWORD': '12345678',
-        'HOST': 'localhost',
-        'PORT': '',
+        'HOST': 'db',  # ✅ Use the service name from docker-compose
+        'PORT': '5432',  # ✅ Explicitly set the PostgreSQL port
     }
 }
 
  
 
- 
+#  DATABASES: {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'db',
+#         'USER': 'nusret',
+#         'PASSWORD': '12345678',
+#         'HOST': 'db',  # ✅ Use the service name from docker-compose
+#         'PORT': '5432',  # ✅ Explicitly set the PostgreSQL port
+#     }
+# }
 
 
 # Password validation
