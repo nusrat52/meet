@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-tgu92-c_d!5^*m72-8d%ei7u8xut_ulqcn1=t0d7*=*1k%s3ia
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '165.22.74.182', '10.114.0.2', 'www.nusretibrahimli.life', 'nusretibrahimli.life']
+# ALLOWED_HOSTS = ['localhost', '165.22.74.182', '10.114.0.2', 'www.nusretibrahimli.life', 'nusretibrahimli.life']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -70,7 +71,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'first_django.wsgi.application'
 
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
+
+
+CSRF_TRUSTED_ORIGINS = os.environ.get("CSRF_TRUSTED_ORIGINS").split(" ")
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
