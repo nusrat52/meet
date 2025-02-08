@@ -3,12 +3,12 @@ version: '3.3'
 services:
   web:
     build:
-      context: ./app
-      dockerfile: Dockerfile.prod
+      context: .
+      dockerfile: Dockerfile
     command: gunicorn first_django.wsgi:application --bind 0.0.0.0:8000
     volumes:
-      - static_volume:/app/static
-      - media_volume:/app/mediafiles
+      - static_volume:/static
+      - media_volume:/mediafiles
     expose:
       - 8000
     env_file:
@@ -29,8 +29,8 @@ services:
       - 443:443
       - 80:80
     volumes:
-      - static_volume:/app/static
-      - media_volume:/app/mediafiles
+      - static_volume:/static
+      - media_volume:/mediafiles
       - certs:/etc/nginx/certs
       - html:/usr/share/nginx/html
       - vhost:/etc/nginx/vhost.d
