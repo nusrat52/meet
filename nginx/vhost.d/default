@@ -1,9 +1,9 @@
 location /static/ {
-  alias /static/;
+  alias /home/meet/static/;
   add_header Access-Control-Allow-Origin *;
 }
 
 location /media/ {
-  alias /mediafiles/;
+  alias /home/meet/mediafiles/;
   add_header Access-Control-Allow-Origin *;
 }
