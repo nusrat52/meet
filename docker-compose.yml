@@ -13,6 +13,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    command: gunicorn first_django.wsgi:application --bind 0.0.0.0:8000
     volumes:
     - static_volume:/app/static
     - media_volume:/app/mediafiles
@@ -27,8 +28,6 @@ services:
     container_name: nginx-proxy
     build: nginx
     restart: always
-    depends_on:
-      - web
     volumes:
       - static_volume:/app/static
       - media_volume:/app/mediafiles
@@ -39,7 +38,8 @@ services:
     ports:
       - "443:443"
       - "80:80"
-
+    depends_on:
+      - web
   acme-companion:
     image: nginxproxy/acme-companion
     env_file:
